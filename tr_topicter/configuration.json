@@ -1,0 +1,14 @@
+{
+  "LANGUAGE_IDENTIFICATION": {
+    "limit": {
+      "character": 500
+    },
+    "probability_threshold": 0.2
+  },
+  "DOMAIN_DETECTION": {
+    "limit": {
+      "character": 500
+    },
+    "probability_threshold": 0.5
+  }
+}
