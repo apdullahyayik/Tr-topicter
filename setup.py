@@ -9,7 +9,7 @@ setup(
     author='Apdullah YAYIK',
     author_email='apdullahyayik@gmail.com',
     url='https://github.com/apdullahyayik',
-    download_url='https://github.com/user/reponame/archive/v_01.tar.gz',
+    download_url='https://github.com/apdullahyayik/Tr-topicter/archive/v0.0.1.tar.gz',
     keywords=['Turkish domain detector', 'text classification', 'topic classification'],
     install_requires=['fasttext'],
     classifiers=[
