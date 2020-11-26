@@ -2,8 +2,8 @@ import re
 from json import load
 
 from detectors.domain_detector import DomainDetector
-from exceptions import NonTurkishStringError
 from detectors.language_detector import LanguageDetector
+from exceptions import NonTurkishStringError
 from tokenizer import compile_word_tokenizer_regex
 
 __all__ = ['TrTopicter']
@@ -59,4 +59,4 @@ class TrTopicter:
         raise NonTurkishStringError
 
     def __repr__(self):
-        return f'Class dedicated to load machine learning models and provide predictions'
+        return '<TrTopicter> object dedicated to load machine learning models and provide predictions'

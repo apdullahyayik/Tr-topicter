@@ -87,3 +87,6 @@ class LanguageDetector:
                 return None
         else:
             return None
+
+    def __repr__(self):
+        return '<LanguageDetector> object dedicated to load machine learning models and provide predictions'

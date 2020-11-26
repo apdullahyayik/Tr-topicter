@@ -112,3 +112,6 @@ class DomainDetector:
                 return None
         else:
             return None
+
+    def __repr__(self):
+        return '<DomainDetector> object dedicated to load machine learning models and provide predictions'
