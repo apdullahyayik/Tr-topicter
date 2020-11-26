@@ -42,7 +42,9 @@ Install the dependencies and start using.
 ```sh
 $ pip install tr_topicter
 ```
+
 ### Configuration
+
 ```
 {
   "LANGUAGE_IDENTIFICATION": {
@@ -59,7 +61,8 @@ $ pip install tr_topicter
   }
 }
 ```
- `character` : Number of characters threshold for detection, data type is integer
+
+`character` : Number of characters threshold for detection, data type is integer
 
 `probability_threshold`: Probablity threshold for detection, data type is float
 
