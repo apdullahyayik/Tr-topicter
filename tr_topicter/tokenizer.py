@@ -12,8 +12,7 @@ __author__ = 'Apdullah Yayık <apdullahyayik@gmail.com>'
 
 from typing import Tuple, Union, List
 
-import regex as re
-# import re
+import re
 
 
 def compile_word_tokenizer_regex():

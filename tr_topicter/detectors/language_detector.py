@@ -12,10 +12,8 @@ import os
 import re
 from typing import Tuple, Optional
 
-from tr_topicter.detectors import _load_model
-from tr_topicter.exceptions import MLModelNotExistError, MLModelFileBrokenError
-
-# from fasttext import load_model
+from detectors import _load_model
+from exceptions import MLModelNotExistError, MLModelFileBrokenError
 
 __all__ = ['LanguageDetector']
 __version__ = '0.0.0.1'
