@@ -1,4 +1,4 @@
-from tr_topicter import TrTopicter
+from trtopicter import TrTopicter
 
 instance = TrTopicter()
 
