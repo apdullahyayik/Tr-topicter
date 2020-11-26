@@ -13,6 +13,3 @@ include tr_topicter/stop_words/tr_stop_words
 include tr_topicter/models/domain_detector/*.lite
 include tr_topicter/models/language/*.ftz
 include tr_topicter/*.json
-
-
-
