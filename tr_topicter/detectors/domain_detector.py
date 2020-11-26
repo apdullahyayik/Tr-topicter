@@ -40,6 +40,8 @@ class UnicodeTr(str):
 
 
 class DomainDetector:
+    __slots__ = ('stop_words', 'word_tokenizer_pre_compiled_regex', 'probability_threshold', 'model')
+
     def __init__(self, ml_model_path: str,
                  probability_threshold: float,
                  word_tokenizer_pre_compiled_regex,
