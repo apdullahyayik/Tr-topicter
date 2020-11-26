@@ -1,0 +1,18 @@
+include setup.cfg
+include setup.py
+include tr_topicter/__init__.py
+include tr_topicter/exceptions.py
+include tr_topicter/tokenizer.py
+include tr_topicter/trtopicter.py
+include LICENSE.txt
+include README.md
+include tr_topicter/detectors/__init__.py
+include tr_topicter/detectors/domain_detector.py
+include tr_topicter/detectors/language_detector.py
+include tr_topicter/stop_words/tr_stop_words
+include tr_topicter/models/domain_detector/*.lite
+include tr_topicter/models/language/*.ftz
+include tr_topicter/*.json
+
+
+
