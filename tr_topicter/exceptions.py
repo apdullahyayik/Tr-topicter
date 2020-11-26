@@ -11,7 +11,7 @@ import os
 __all__ = ['short_descriptions', 'TrTopicterError', 'MLModelFileBrokenError', 'NonTurkishStringError',
            'MLModelNotExistError', 'get_line_info']
 __version__ = '0.0.0.1'
-__since__ = '14.10.2020'
+__since__ = '25.11.2020'
 __author__ = 'Apdullah Yayık <apdullahyayik@gmail.com>'
 
 from typing import Union
