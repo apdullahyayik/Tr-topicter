@@ -3,17 +3,19 @@
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 TrTopicter is a machine learning solution to detect topic from given Turkish text.
+
 Language detection is stacked before the model to avoid analysing non-Turkish text that may potentially pave the way to
 erroneous responses.
  
 
-Deployed Support Vector Machine model  was trained with almost 30K Turkish annotated sentences/paragraphs and 93% F-1 score is achieved.
+Deployed model  was trained with almost 30K Turkish annotated sentences/paragraphs and 93% F-1 score is achieved.
+
 Response time for a given text that has over 300 characters is lower than 1 ms and resource usage is only 6 MB.
 
 
 ### Supported Categories
 
-For now only 9 number of categories below are supported.
+For now, only 9 number of categories below are supported.
 
     'siyaset': 'politics',
     'dunya': 'world',
@@ -34,10 +36,10 @@ For now only 9 number of categories below are supported.
 
 ### Installation
 
-TrTopic requires [Python](https://python.org/) v3+ to run. 
-It is tried successfully at Windows 10, Ubuntu 20.04 and OSX Catalina 10.15.7
+TrTopic requires [Python](https://python.org/) >= 3.4 to run. 
+It is tested on Windows 10, Ubuntu 20.04 and OSX Catalina 10.15.7
 
-Install the dependencies and start using.
+Easily install using pip
 
 ```sh
 $ pip install trtopicter
@@ -74,7 +76,7 @@ from trtopicter install TrTopicter
 
 topicter = TrTopicter()
 
-print(instance.get_topic("""
+print(topicter.get_topic("""
 Epidemiyoloji:HIV infeksiyonu ile birlikte dünyada Tbc olgularında artış görülmüştür.
 İnfeksiyon hastalıkları içerisinde morbidite ve mortalitesi en yüksek olandır. 
 Kişide infeksiyona yatkınlıkbulaşmada önemlidir (genetik faktörler).
@@ -86,7 +88,7 @@ M tuberculosis dokuda latent bir şekilde kalabilir, tedaviye yanıt vermez ve r
 
 # {'label': 'health', 'probability': 1.0}
 
-print(instance.get_topic("""
+print(topicter.get_topic("""
 Salgından etkilenen altının gram fiyatı, güne yükselişle başlamasının ardından 473,8 liradan işlem görüyor. 
 Aynı dakikalarda çeyrek altın 775 lira, Cumhuriyet altını da 3.163 liradan satılıyor.
 Dün, altının ons fiyatı ve dolar kurundaki düşüşe paralel değer kaybeden gram altın, 
