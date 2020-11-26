@@ -3,9 +3,9 @@ import re
 from string import punctuation
 from typing import Optional, Tuple
 
-from detectors import _load_model
-from exceptions import MLModelNotExistError, MLModelFileBrokenError
-from tokenizer import word_tokenize
+from trtopicter.detectors import _load_model
+from trtopicter.exceptions import MLModelNotExistError, MLModelFileBrokenError
+from trtopicter.tokenizer import word_tokenize
 
 __all__ = ['DomainDetector']
 __version__ = '0.0.0.1'

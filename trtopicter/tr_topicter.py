@@ -1,10 +1,11 @@
+import os
 import re
 from json import load
 
-from detectors.domain_detector import DomainDetector
-from detectors.language_detector import LanguageDetector
-from exceptions import NonTurkishStringError
-from tokenizer import compile_word_tokenizer_regex
+from trtopicter.detectors.domain_detector import DomainDetector
+from trtopicter.detectors.language_detector import LanguageDetector
+from trtopicter.exceptions import NonTurkishStringError
+from trtopicter.tokenizer import compile_word_tokenizer_regex
 
 __all__ = ['TrTopicter']
 __version__ = '0.0.0.1'
@@ -16,14 +17,15 @@ class TrTopicter:
     __slots__ = ('language_detection_model', 'domain_detection_model', 'text', 'parameters')
 
     def __init__(self):
-        self.parameters = self.__read_params('trtopicter/configuration.json')
+        this_directory = os.path.abspath(os.path.dirname(__file__))
+        self.parameters = self.__read_params(os.path.join(this_directory,'./configuration.json'))
         language_probability_threshold = self.parameters['LANGUAGE_IDENTIFICATION']['probability_threshold']
-        self.language_detection_model = LanguageDetector("trtopicter/models/language/lid.176.ftz",
+        self.language_detection_model = LanguageDetector(os.path.join(this_directory,'models/language/lid.176.ftz'),
                                                          language_probability_threshold)
         domain_probability_threshold = self.parameters['DOMAIN_DETECTION']['probability_threshold']
         word_tokenizer_pre_compiled_regex = compile_word_tokenizer_regex()
-        stop_words = self.__read_stop_words('trtopicter/stop_words/tr_stop_words')
-        self.domain_detection_model = DomainDetector('trtopicter/models/domain_detector/tr_domain_data.lite',
+        stop_words = self.__read_stop_words(os.path.join(this_directory,'stop_words/tr_stop_words'))
+        self.domain_detection_model = DomainDetector(os.path.join(this_directory,'models/domain_detector/tr_domain_data.lite'),
                                                      domain_probability_threshold,
                                                      word_tokenizer_pre_compiled_regex,
                                                      stop_words)
