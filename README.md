@@ -7,8 +7,8 @@ Language detection is stacked before the model to avoid analysing non-Turkish te
 erroneous responses.
  
 
-Deployed Support Vector Machine model used  was trained with more than 30K Turkish annotated sentences/paragraphs.
-Achieved F-1 score is 93%. Response time for given text that has over 300 characters is lower than 1 ms and resource usage is only 6 MB.
+Deployed Support Vector Machine model  was trained with almost 30K Turkish annotated sentences/paragraphs and 93% F-1 score is achieved.
+Response time for a given text that has over 300 characters is lower than 1 ms and resource usage is only 6 MB.
 
 
 ### Supported Categories
