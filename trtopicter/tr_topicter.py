@@ -16,14 +16,14 @@ class TrTopicter:
     __slots__ = ('language_detection_model', 'domain_detection_model', 'text', 'parameters')
 
     def __init__(self):
-        self.parameters = self.__read_params('./tr_topicter/configuration.json')
+        self.parameters = self.__read_params('trtopicter/configuration.json')
         language_probability_threshold = self.parameters['LANGUAGE_IDENTIFICATION']['probability_threshold']
-        self.language_detection_model = LanguageDetector("./tr_topicter/models/language/lid.176.ftz",
+        self.language_detection_model = LanguageDetector("trtopicter/models/language/lid.176.ftz",
                                                          language_probability_threshold)
         domain_probability_threshold = self.parameters['DOMAIN_DETECTION']['probability_threshold']
         word_tokenizer_pre_compiled_regex = compile_word_tokenizer_regex()
-        stop_words = self.__read_stop_words('./tr_topicter/stop_words/tr_stop_words')
-        self.domain_detection_model = DomainDetector('./tr_topicter/models/domain_detector/tr_domain_data.lite',
+        stop_words = self.__read_stop_words('trtopicter/stop_words/tr_stop_words')
+        self.domain_detection_model = DomainDetector('trtopicter/models/domain_detector/tr_domain_data.lite',
                                                      domain_probability_threshold,
                                                      word_tokenizer_pre_compiled_regex,
                                                      stop_words)
