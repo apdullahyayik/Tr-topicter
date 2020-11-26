@@ -40,7 +40,7 @@ It is tried successfully at Windows 10, Ubuntu 20.04 and OSX Catalina 10.15.7
 Install the dependencies and start using.
 
 ```sh
-$ pip install tr_topicter
+$ pip install trtopicter
 ```
 
 ### Configuration
@@ -70,7 +70,7 @@ $ pip install tr_topicter
 Create an object from TrTopicter class and easily pass a string to get_topic method.
 
 ```
-from tr_topicter install TrTopicter
+from trtopicter install TrTopicter
 
 topicter = TrTopicter()
 

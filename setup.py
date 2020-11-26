@@ -10,7 +10,7 @@ setup(
     name='trtopicter',
     packages=['trtopicter'],
     include_package_data=True,
-    version='0.0.1',
+    version='0.0.2',
     license='MIT',
     description='Turkish topic detector using machine learning',
     # long_description=long_description,
