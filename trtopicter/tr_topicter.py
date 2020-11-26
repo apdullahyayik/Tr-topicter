@@ -2,10 +2,10 @@ import os
 import re
 from json import load
 
-from trtopicter.detectors.domain_detector import DomainDetector
-from trtopicter.detectors.language_detector import LanguageDetector
-from trtopicter.exceptions import NonTurkishStringError
-from trtopicter.tokenizer import compile_word_tokenizer_regex
+from .detectors.domain_detector import DomainDetector
+from .detectors.language_detector import LanguageDetector
+from .exceptions import NonTurkishStringError
+from .tokenizer import compile_word_tokenizer_regex
 
 __all__ = ['TrTopicter']
 __version__ = '0.0.0.1'
