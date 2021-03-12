@@ -1,11 +1,13 @@
-# TrTopicter 🇹🇷 
+# TrTopicter 🇹🇷
 
 [![Python](https://img.shields.io/pypi/pyversions/tensorflow.svg?style=plastic)](https://badge.fury.io/py/trtopicter)
 [![PyPI](https://badge.fury.io/py/tensorflow.svg)](https://badge.fury.io/py/trtopicter)
 
-TrTopicter is a ready-use fasttext machine learning model to detect the topic of given Turkish text.  Language detection is stacked before the model to avoid analyzing non-Turkish text that may potentially pave the way to
-erroneous responses.  The deployed model was trained with almost 30K Turkish annotated sentences/paragraphs, and an averaged F-1 measure of 94.37 % is achieved. 
-Execution time for a given text that has over 300 characters is lower than 1 ms and resource usage is only 6 MB.
+TrTopicter is a ready-use fasttext machine learning model to detect the topic of given Turkish text. Language detection
+is stacked before the model to avoid analyzing non-Turkish text that may potentially pave the way to erroneous
+responses. The deployed model was trained with almost 30K Turkish annotated sentences/paragraphs, and an averaged F-1
+measure of 94.37 % is achieved. Execution time for a given text that has over 300 characters is lower than 1 ms and
+resource usage is only 6 MB.
 
 ## Install
 
@@ -28,17 +30,17 @@ For now, only 9 number of categories below are supported.
     'kultur': 'culture',
     'religion': 'religion',
     'education': 'education',
-    
+
 ## Preprocessing
 
 - Case-folding to lower case
 - Punctuation, numbers and white space removal
-- Stop words removal (credits: https://github.com/ahmetaa/zemberek-nlp/blob/master/experiment/src/main/resources/stop-words.tr.txt)
-
+- Stop words removal (
+  credits: https://github.com/ahmetaa/zemberek-nlp/blob/master/experiment/src/main/resources/stop-words.tr.txt)
 
 ## Configuration
 
-```
+```JSON
 {
   "LANGUAGE_IDENTIFICATION": {
     "limit": {
@@ -63,12 +65,12 @@ For now, only 9 number of categories below are supported.
 
 Create an object from TrTopicter class and easily pass a string to get_topic method.
 
-```
-from trtopicter install TrTopicter
+```python
+>>> from trtopicter install TrTopicter
 
-topicter = TrTopicter()
+>>> topicter = TrTopicter()
 
-print(topicter.get_topic("""
+>>> print(topicter.get_topic("""
 Epidemiyoloji:HIV infeksiyonu ile birlikte dünyada Tbc olgularında artış görülmüştür.
 İnfeksiyon hastalıkları içerisinde morbidite ve mortalitesi en yüksek olandır. 
 Kişide infeksiyona yatkınlıkbulaşmada önemlidir (genetik faktörler).
@@ -78,9 +80,9 @@ bazı durumlarda Bacillus Calmette-Guerin (BCG) infeksiyona neden olur. Tbc yayg
 çok virülandır ne de infeksiyözdür. M. tuberculosis infeksiyonunun ancak %5-10‟u hastalık yapar. 
 M tuberculosis dokuda latent bir şekilde kalabilir, tedaviye yanıt vermez ve reaktivasyon gösterebilir"""))
 
-# {'label': 'health', 'probability': 1.0}
+{'label': 'health', 'probability': 1.0}
 
-print(topicter.get_topic("""
+>>> print(topicter.get_topic("""
 Salgından etkilenen altının gram fiyatı, güne yükselişle başlamasının ardından 473,8 liradan işlem görüyor. 
 Aynı dakikalarda çeyrek altın 775 lira, Cumhuriyet altını da 3.163 liradan satılıyor.
 Dün, altının ons fiyatı ve dolar kurundaki düşüşe paralel değer kaybeden gram altın, 
@@ -91,9 +93,9 @@ yüzde 1,2 üzerinde 473,8 liradan işlem görüyor. Aynı dakikalarda çeyrek a
 Cumhuriyet altını da 3.163 liradan satılıyor.
 """))
 
-# {'label': 'economy', 'probability': 1.0}
+{'label': 'economy', 'probability': 1.0}
 
-print(instance.get_topic("""
+>>> print(instance.get_topic("""
 Onlar yıllardır yeşil sahalarda sergiledikleri futbolla tuttuğumuz takımları galibiyete taşıyor,
 Milli takımla bizleri temsil ediyor. Ancak dediğimiz gibi yıllardı. Yıllardır Süper Lig'de 
 izlediğimiz futbolcuların gençlik zamanları ve şimdiki halleri arasındaki değişimleri sizi
@@ -105,9 +107,8 @@ Kruzliak'ın yardımcılıklarını Tomas Somolani ve Branislav Hancko yapacak.
 Karşılaşmanın dördüncü hakemi ise Filip Glova olacak.
 """))
 
-# {'label': 'sport', 'probability': 1.0}
+{'label': 'sport', 'probability': 1.0}
 ```
-
 
 ## To-do
 
@@ -116,6 +117,6 @@ Karşılaşmanın dördüncü hakemi ise Filip Glova olacak.
 
 ## Resources
 
-*   [Fasttext](https://arxiv.org/abs/1607.01759)
-*   [Topic Classification Survey](https://arxiv.org/abs/2004.03705)
+* [Fasttext](https://arxiv.org/abs/1607.01759)
+* [Topic Classification Survey](https://arxiv.org/abs/2004.03705)
 
