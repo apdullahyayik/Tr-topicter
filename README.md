@@ -3,15 +3,9 @@
 [![Python](https://img.shields.io/pypi/pyversions/tensorflow.svg?style=plastic)](https://badge.fury.io/py/trtopicter)
 [![PyPI](https://badge.fury.io/py/tensorflow.svg)](https://badge.fury.io/py/trtopicter)
 
-TrTopicter is a ready-use machine learning model to detect the topic of given Turkish text.
-
-Language detection is stacked before the model to avoid analyzing non-Turkish text that may potentially pave the way to
-erroneous responses.
- 
-
-The deployed model was trained with almost 30K Turkish annotated sentences/paragraphs, and an averaged F-1 measure of 94.37 % is achieved.
-
-Response time for a given text that has over 300 characters is lower than 1 ms and resource usage is only 6 MB.
+TrTopicter is a ready-use machine learning model to detect the topic of given Turkish text.  Language detection is stacked before the model to avoid analyzing non-Turkish text that may potentially pave the way to
+erroneous responses.  The deployed model was trained with almost 30K Turkish annotated sentences/paragraphs, and an averaged F-1 measure of 94.37 % is achieved. 
+Execution time for a given text that has over 300 characters is lower than 1 ms and resource usage is only 6 MB.
 
 ## Install
 
