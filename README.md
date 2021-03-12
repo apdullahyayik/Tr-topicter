@@ -17,19 +17,9 @@ Pypi installation is available. Tested on Windows 8 / 10, Ubuntu 18.04 / 20.04 a
 $ pip install trtopicter
 ```
 
-## Supported Categories
+## Supported Topics
 
-For now, only 9 number of categories below are supported.
-
-    'siyaset': 'politics',
-    'dunya': 'world',
-    'ekonomi': 'economy',
-    'saglik': 'health',
-    'spor': 'sport',
-    'teknoloji': 'technology',
-    'kultur': 'culture',
-    'religion': 'religion',
-    'education': 'education',
+**politics** - **economy** - **health** - **sport** - **technology** - **culture** - **religion** - **justice**
 
 ## Preprocessing
 
