@@ -79,12 +79,6 @@ class LanguageDetector:
                     label_regex = re.match(pattern=r'__label__([a-z]{2,3})', string=label[0])
                     if label_regex:
                         return {'label': label_regex.group(1), 'probability': probability_value}
-                    else:
-                        return None
-                else:
-                    return None
-            else:
-                return None
         else:
             return None
 

@@ -104,12 +104,6 @@ class DomainDetector:
                         probability_value = min(1.00, probability_value)
                         return {'label': TR_TO_ENG[label_regex.group(1)],
                                 'probability': probability_value}
-                    else:
-                        return None
-                else:
-                    return None
-            else:
-                return None
         else:
             return None
 
