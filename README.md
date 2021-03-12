@@ -21,7 +21,7 @@ $ pip install trtopicter
 
 **politics** - **economy** - **health** - **sport** - **technology** - **culture** - **religion** - **justice**
 
-## Preprocessing
+## Pre-processings
 
 - Case-folding to lower case
 - Punctuation, numbers and white space removal
@@ -102,8 +102,8 @@ Karşılaşmanın dördüncü hakemi ise Filip Glova olacak.
 
 ## To-do
 
-- Increase number of categories
-- Language expansion
+- Increase number of topics
+- Cython support
 
 ## Resources
 
