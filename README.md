@@ -1,6 +1,7 @@
 # TrTopicter 🇹🇷 
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+[![Python](https://img.shields.io/pypi/pyversions/tensorflow.svg?style=plastic)](https://badge.fury.io/py/trtopicter)
+[![PyPI](https://badge.fury.io/py/tensorflow.svg)](https://badge.fury.io/py/trtopicter)
 
 TrTopicter is a machine learning solution to detect topic from given Turkish text.
 
@@ -12,8 +13,15 @@ Deployed model  was trained with almost 30K Turkish annotated sentences/paragrap
 
 Response time for a given text that has over 300 characters is lower than 1 ms and resource usage is only 6 MB.
 
+## Install
 
-### Supported Categories
+It is tested on Windows 10, Ubuntu 20.04 and OSX Catalina 10.15.7
+
+```sh
+$ pip install trtopicter
+```
+
+## Supported Categories
 
 For now, only 9 number of categories below are supported.
 
@@ -27,25 +35,14 @@ For now, only 9 number of categories below are supported.
     'religion': 'religion',
     'education': 'education',
     
-### Preprocessing
+## Preprocessing
 
 - conversion to lower case
 - punctuation, numbers and white space removal
 - stop words removal
 
 
-### Installation
-
-TrTopic requires [Python](https://python.org/) >= 3.4 to run. 
-It is tested on Windows 10, Ubuntu 20.04 and OSX Catalina 10.15.7
-
-Easily install using pip
-
-```sh
-$ pip install trtopicter
-```
-
-### Configuration
+## Configuration
 
 ```
 {
@@ -68,7 +65,8 @@ $ pip install trtopicter
 
 `probability_threshold`: Probablity threshold for detection, data type is float
 
-### Usage
+## Usage
+
 Create an object from TrTopicter class and easily pass a string to get_topic method.
 
 ```
@@ -117,8 +115,13 @@ Karşılaşmanın dördüncü hakemi ise Filip Glova olacak.
 ```
 
 
-### To-do
+## To-do
 
 - Increase number of categories
 - Language expansion
+
+## Resources
+
+*   [Fasttext](https://arxiv.org/abs/1607.01759)
+*   [Topic Classification Survey](https://arxiv.org/abs/2004.03705)
 
