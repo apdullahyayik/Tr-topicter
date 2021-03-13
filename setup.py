@@ -20,7 +20,7 @@ setup(
     author='Apdullah YAYIK',
     author_email='apdullahyayik@gmail.com',
     url='https://github.com/apdullahyayik/Tr-topicter',
-    download_url='https://github.com/apdullahyayik/Tr-topicter/archive/v0.0.3.tar.gz',
+    download_url='https://github.com/apdullahyayik/Tr-topicter/archive/v0.0.6.tar.gz',
     keywords=['Turkish topic classifier', 'text classification', 'topic classification'],
     install_requires=['fasttext'],
     python_requires='>=3.4'
