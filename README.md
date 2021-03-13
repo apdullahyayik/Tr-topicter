@@ -109,4 +109,5 @@ Karşılaşmanın dördüncü hakemi ise Filip Glova olacak.
 
 * [Fasttext](https://arxiv.org/abs/1607.01759)
 * [Topic Classification Survey](https://arxiv.org/abs/2004.03705)
-
+* [Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp3/)
+* [Bogazici University CMPE-561](https://www.cmpe.boun.edu.tr/tr/courses/cmpe561)
