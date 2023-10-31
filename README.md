@@ -1,36 +1,44 @@
-# TrTopicter 🇹🇷
+# 🔍 TrTopicter
 
-[![Python](https://img.shields.io/pypi/pyversions/tensorflow.svg?style=plastic)](https://badge.fury.io/py/trtopicter)
-[![PyPI](https://badge.fury.io/py/tensorflow.svg)](https://badge.fury.io/py/trtopicter)
+A simple topic detector.
 
-TrTopicter is a ready-use package that uses a deployed machine learning model inside to detect the topic of given Turkish textual content. Language detection
-is stacked before the model to avoid analyzing non-Turkish text that may potentially pave the way to erroneous
-responses. The deployed model was trained with almost 30K Turkish annotated sentences/paragraphs, and an averaged F-1
-measure of 94.37 % is achieved. Execution time for a given text that has over 300 characters is lower than 1 ms and
-resource usage is only 6 MB.
+[![Python Version](https://img.shields.io/pypi/pyversions/trtopicter.svg?style=for-the-badge)](https://pypi.org/project/trtopicter/)
+[![PyPI Version](https://img.shields.io/pypi/v/trtopicter.svg?style=for-the-badge)](https://pypi.org/project/trtopicter/)
 
-## Install
+## Overview
 
-Pypi installation is available. Tested on Windows 8 / 10, Ubuntu 18.04 / 20.04 and OSX Catalina 10.15.7
+**TrTopicter** is a pre-built package equipped with a machine learning model designed to detect the topics of Turkish textual content. The language of the text is first identified to avoid analyzing non-Turkish text, which could lead to inaccurate results. The deployed model has been trained on nearly 30,000 annotated Turkish sentences/paragraphs, achieving an average F-1 score of 94.37%. The execution time for analyzing text with over 300 characters is less than 1 ms, and resource usage is only 6 MB.
+
+## Installation
+
+You can easily install **TrTopicter** via PyPI. It has been tested on Windows 8/10, Ubuntu 18.04/20.04, and macOS Catalina 10.15.7.
 
 ```sh
-$ pip install trtopicter
+pip install trtopicter
 ```
 
 ## Supported Topics
 
-**politics** - **economy** - **health** - **sport** - **technology** - **culture** - **religion** - **justice**
+- **politics**
+- **economy**
+- **health**
+- **sport**
+- **technology**
+- **culture**
+- **religion**
+- **justice**
 
-## Pre-processings
+## Pre-processing
 
-- Case-folding to lower case
-- Punctuation, numbers and white space removal
-- Stop words removal (
-  credits: https://github.com/ahmetaa/zemberek-nlp/blob/master/experiment/src/main/resources/stop-words.tr.txt)
+Text preprocessing includes:
+
+- Case-folding to lowercase
+- Punctuation, numbers, and white space removal
+- Stop words removal (Credits: [Zemberek-NLP](https://github.com/ahmetaa/zemberek-nlp/blob/master/experiment/src/main/resources/stop-words.tr.txt))
 
 ## Configuration
 
-```JSON
+```json
 {
   "LANGUAGE_IDENTIFICATION": {
     "limit": {
@@ -47,67 +55,35 @@ $ pip install trtopicter
 }
 ```
 
-`character` : Number of characters threshold for detection, data type is integer
-
-`probability_threshold`: Probablity threshold for detection, data type is float
+- `character`: Number of characters threshold for detection (data type: integer).
+- `probability_threshold`: Probability threshold for detection (data type: float).
 
 ## Usage
 
-Create an object from TrTopicter class and easily pass a string to get_topic method.
+You can use the **TrTopicter** package to determine the topic of Turkish text easily:
 
 ```python
->>> from trtopicter install TrTopicter
+from trtopicter import TrTopicter
 
->>> topicter = TrTopicter()
+topicter = TrTopicter()
 
->>> print(topicter.get_topic("""
-Epidemiyoloji:HIV infeksiyonu ile birlikte dünyada Tbc olgularında artış görülmüştür.
-İnfeksiyon hastalıkları içerisinde morbidite ve mortalitesi en yüksek olandır. 
-Kişide infeksiyona yatkınlıkbulaşmada önemlidir (genetik faktörler).
-Mycobacteria tuberculosis aside dirençli bir bakteri olup Ehrlich-Ziehl-Neelsen boyama yöntemi ilemavi bir 
-zemin üzerinde kırmızı çomaklar halinde görülür.Deri tüberkülozu:Deride M tuberculosis, M bovis ve 
-bazı durumlarda Bacillus Calmette-Guerin (BCG) infeksiyona neden olur. Tbc yaygın görülmekle beraber etkenler ne 
-çok virülandır ne de infeksiyözdür. M. tuberculosis infeksiyonunun ancak %5-10‟u hastalık yapar. 
-M tuberculosis dokuda latent bir şekilde kalabilir, tedaviye yanıt vermez ve reaktivasyon gösterebilir"""))
+result = topicter.get_topic("Your Turkish text goes here.")
 
-{'label': 'health', 'probability': 1.0}
-
->>> print(topicter.get_topic("""
-Salgından etkilenen altının gram fiyatı, güne yükselişle başlamasının ardından 473,8 liradan işlem görüyor. 
-Aynı dakikalarda çeyrek altın 775 lira, Cumhuriyet altını da 3.163 liradan satılıyor.
-Dün, altının ons fiyatı ve dolar kurundaki düşüşe paralel değer kaybeden gram altın, 
-günü bir önceki kapanışın yüzde 7,7 altında 468 liradan tamamladı.
-SALGIN ALTININ ONS FİYATINI ETKİLİYOR
-Gram altın, yeni güne değer kazancıyla başlamasının ardından saat 10.55 itibarıyla önceki kapanışın 
-yüzde 1,2 üzerinde 473,8 liradan işlem görüyor. Aynı dakikalarda çeyrek altın 775 lira, 
-Cumhuriyet altını da 3.163 liradan satılıyor.
-"""))
-
-{'label': 'economy', 'probability': 1.0}
-
->>> print(instance.get_topic("""
-Onlar yıllardır yeşil sahalarda sergiledikleri futbolla tuttuğumuz takımları galibiyete taşıyor,
-Milli takımla bizleri temsil ediyor. Ancak dediğimiz gibi yıllardı. Yıllardır Süper Lig'de 
-izlediğimiz futbolcuların gençlik zamanları ve şimdiki halleri arasındaki değişimleri sizi
-çok şaşırtacak. A Milli Futbol Takımı'nın UEFA Uluslar B Ligi 3. Grup'ta 18 Kasım Çarşamba
-günü Macaristan ile deplasmanda oynayacağı maçı Slovak hakem Ivan Kruzliak yönetecek.
-Türkiye Futbol Federasyonunun internet sitesinde yer alan açıklamaya göre, 
-başkent Budapeşte'deki Puşkaş Arena'da TSİ 22.45'te başlayacak karşılaşmada düdük çalacak 
-Kruzliak'ın yardımcılıklarını Tomas Somolani ve Branislav Hancko yapacak.
-Karşılaşmanın dördüncü hakemi ise Filip Glova olacak.
-"""))
-
-{'label': 'sport', 'probability': 1.0}
+print(result)
 ```
 
-## To-do
+## To-do List
 
-- Increase number of topics
-- Cython support
+Our to-do list includes:
 
-## Resources
+- Expanding the number of supported topics
+- Adding Cython support
 
-* [Fasttext](https://arxiv.org/abs/1607.01759)
-* [Topic Classification Survey](https://arxiv.org/abs/2004.03705)
-* [Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp3/)
-* [Bogazici University CMPE-561](https://www.cmpe.boun.edu.tr/tr/courses/cmpe561)
+## Additional Resources
+
+Explore more about natural language processing and related topics:
+
+- [Fasttext](https://arxiv.org/abs/1607.01759)
+- [Topic Classification Survey](https://arxiv.org/abs/2004.03705)
+- [Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp3/)
+- [Bogazici University CMPE-561](https://www.cmpe.boun.edu.tr/tr/courses/cmpe561)
